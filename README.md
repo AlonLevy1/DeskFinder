@@ -1,3 +1,13 @@
+# DeskFinder
+# Onboarding:
+1. In order to clone the repo you need to create access token:
+    go to Settings>Developer Settings>Personal access tokens>Tokens (classic)>Generate new token
+2. Clone the repo:
+    git clone https://<User>:<Token>@github.com/AlonLevy1/DeskFinder.git
+
+
+
+
 # Overview of the React with Fluent UI template
 
 This app showcases how to craft a visually appealing web page that can be embedded in Microsoft Teams, Outlook and the Microsoft 365 app with React and Fluent UI. The app also enhances the end-user experiences with built-in single sign-on and data from Microsoft Graph.
@@ -58,3 +68,4 @@ Following documentation will help you to extend the React with Fluent UI templat
 - [Publish the app to your organization or the Microsoft Teams app store](https://learn.microsoft.com/microsoftteams/platform/toolkit/publish)
 - [Enable the app for multi-tenant](https://github.com/OfficeDev/TeamsFx/wiki/Multi-tenancy-Support-for-Azure-AD-app)
 - [Preview the app on mobile clients](https://github.com/OfficeDev/TeamsFx/wiki/Run-and-debug-your-Teams-application-on-iOS-or-Android-client)
+

@@ -1,0 +1,51 @@
+{
+	"$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.17/MicrosoftTeams.schema.json",
+	"version": "1.0.0",
+	"manifestVersion": "1.17",
+	"id": "${{TEAMS_APP_ID}}",
+	"name": {
+		"short": "DeskFinder",
+		"full": ""
+	},
+	"developer": {
+		"name": "Microsoft",
+		"mpnId": "",
+		"websiteUrl": "https://www.microsoft.com",
+		"privacyUrl": "https://www.microsoft.com",
+		"termsOfUseUrl": "https://www.microsoft.com"
+	},
+	"description": {
+		"short": "DeskFinder",
+		"full": "The best desk finder"
+	},
+	"icons": {
+		"outline": "outline.png",
+		"color": "color.png"
+	},
+	"accentColor": "#FFFFFF",
+	"validDomains": [
+		"${{TAB_DOMAIN}}"
+	],
+	"bots": [],
+	"composeExtensions": [],
+	"staticTabs": [
+		{
+			"entityId": "index",
+			"name": "Personal Tab",
+			"contentUrl": "${{TAB_ENDPOINT}}/index.html#/tab",
+			"websiteUrl": "${{TAB_ENDPOINT}}/index.html#/tab",
+			"scopes": [
+				"personal"
+			]
+		}
+	],
+	"configurableTabs": [],
+	"permissions": [
+		"identity",
+		"messageTeamMembers"
+	],
+	"webApplicationInfo": {
+		"id": "${{AAD_APP_CLIENT_ID}}",
+		"resource": "api://${{TAB_DOMAIN}}/${{AAD_APP_CLIENT_ID}}"
+	}
+}

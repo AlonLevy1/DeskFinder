@@ -1,0 +1,6 @@
+@DeskFinderApi_HostAddress = http://localhost:5047
+
+GET {{DeskFinderApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

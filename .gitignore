@@ -16,3 +16,7 @@ appPackage/build
 
 # Dev tool directories
 /devTools/
+/.vs
+/backend/DeskFinderApi/obj
+/backend/DeskFinderApi/bin
+/backend/DeskFinderApi/publish

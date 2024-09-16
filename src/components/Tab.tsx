@@ -1,15 +1,12 @@
 import { useContext } from "react";
-import { Welcome } from "./sample/Welcome";
 import { TeamsFxContext } from "./Context";
-import config from "./sample/lib/config";
 import { IUserSettings, Mock } from "../Mocks";
 import { DeskOwnerSettings } from "./desk-owner/DeskOwnerSettings";
-
-const showFunction = Boolean(config.apiName);
+import { DeskLookerMain } from "./desk-looker/DeskLookerMain";
 
 export default function Tab() {
   const { themeString } = useContext(TeamsFxContext);
-  const userSettings: IUserSettings = Mock.UserWithDeskSettings;
+  const userSettings: IUserSettings = Mock.UserWithoutDeskSettings;
 
   return (
     <div
@@ -17,7 +14,7 @@ export default function Tab() {
     >
       {userSettings.assignedDesk ? 
         <DeskOwnerSettings userSettings={userSettings} /> :
-         <Welcome showFunction={showFunction} />}
+        <DeskLookerMain/>}
     </div>
   );
 }

@@ -9,11 +9,11 @@ export const Mock = {
     UserWithDeskSettings: {
         assignedDesk: "5B214_16",
         preferences: {
-            sunday: DailyPreference.AutoApprove,
-            monday: DailyPreference.Blocked,
-            tuesday: DailyPreference.Blocked,
-            wednesday: DailyPreference.ManualApprove,
-            thursday: DailyPreference.AutoApprove,
+            Sunday: DailyPreference.AutoApprove,
+            Monday: DailyPreference.Blocked,
+            Tuesday: DailyPreference.Blocked,
+            Wednesday: DailyPreference.ManualApprove,
+            Thursday: DailyPreference.AutoApprove,
         }
     },
     UserWithoutDeskSettings: {
@@ -23,12 +23,14 @@ export const Mock = {
 
 export interface IUserSettings {
     assignedDesk: string | null;
-    preferences: {
-        sunday?: DailyPreference,
-        monday: DailyPreference,
-        tuesday: DailyPreference,
-        wednesday: DailyPreference,
-        thursday: DailyPreference,
-        friday?: DailyPreference
-    }
+    preferences?: IPreferences;
+}
+
+export interface IPreferences {
+    Sunday?: DailyPreference;
+    Monday: DailyPreference;
+    Tuesday: DailyPreference;
+    Wednesday: DailyPreference;
+    Thursday: DailyPreference;
+    Friday?: DailyPreference;
 }

@@ -7,6 +7,7 @@ import {
   Spinner,
   tokens,
 } from "@fluentui/react-components";
+import { ThemeProvider, PartialTheme } from '@fluentui/react';
 import { HashRouter as Router, Navigate, Route, Routes } from "react-router-dom";
 import { useTeamsUserCredential } from "@microsoft/teamsfx-react";
 import Tab from "./Tab";
@@ -24,30 +25,32 @@ export default function App() {
   });
   return (
     <TeamsFxContext.Provider value={{ theme, themeString, teamsUserCredential }}>
-      <FluentProvider
-        theme={
-          themeString === "dark"
-            ? teamsDarkTheme
-            : themeString === "contrast"
-            ? teamsHighContrastTheme
-            : {
-                ...teamsLightTheme,
-                colorNeutralBackground3: "#eeeeee",
-              }
-        }
-        style={{ background: tokens.colorNeutralBackground3 }}
-      >
-        <Router>
-          {loading ? (
-            <Spinner style={{ margin: 100 }} />
-          ) : (
-            <Routes>
-              <Route path="/tab" element={<Tab />} />
-              <Route path="*" element={<Navigate to={"/tab"} />}></Route>
-            </Routes>
-          )}
-        </Router>
-      </FluentProvider>
+      <ThemeProvider theme={theme as PartialTheme}>
+        <FluentProvider
+          theme={
+            themeString === "dark"
+              ? teamsDarkTheme
+              : themeString === "contrast"
+              ? teamsHighContrastTheme
+              : {
+                  ...teamsLightTheme,
+                  colorNeutralBackground3: "#eeeeee",
+                }
+          }
+          style={{ background: tokens.colorNeutralBackground3 }}
+        >
+          <Router>
+            {loading ? (
+              <Spinner style={{ margin: 100 }} />
+            ) : (
+              <Routes>
+                <Route path="/tab" element={<Tab />} />
+                <Route path="*" element={<Navigate to={"/tab"} />}></Route>
+              </Routes>
+            )}
+          </Router>
+        </FluentProvider>
+      </ThemeProvider>
     </TeamsFxContext.Provider>
   );
 }

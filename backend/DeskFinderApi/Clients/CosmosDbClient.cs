@@ -15,13 +15,13 @@ namespace DeskFinderApi.Clients
         private Database _database;
         private Container _container;
 
-        private string ConnectionString = "";
+        private string cs = "";
         private string _databaseId;
         private string _containerId;
 
         public CosmosDbClient(string db, string container)
         {
-            _cosmosClient = new CosmosClient(ConnectionString);
+            _cosmosClient = new CosmosClient(cs);
             _databaseId = db;
             _containerId = container;
         }

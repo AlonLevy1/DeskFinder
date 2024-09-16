@@ -15,7 +15,7 @@ namespace DeskFinderApi.Clients
         private Database _database;
         private Container _container;
 
-        private string ConnectionString = "AccountEndpoint=https://deskfinder-db.documents.azure.com:443/;AccountKey=6TF6Cdw8N4e6aj9To7BY68dPqDE82Nul1jsYX98E3n3Nj6brJq2fTSaFYkrmQ9NViPsUiO8CpJ3RACDbAvd2pg==;";
+        private string ConnectionString = "";
         private string _databaseId;
         private string _containerId;
 
